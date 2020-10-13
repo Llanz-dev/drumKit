@@ -3,7 +3,7 @@ $(".drum").click(function(){
     makeSound(button);
     buttonAnimation(button);
 });
-$(document).keypress(function(){
+$(document).keypress(function(event){
     makeSound(event.key);
     buttonAnimation(event.key);
 });
