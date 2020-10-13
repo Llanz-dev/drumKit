@@ -3,9 +3,9 @@ $(".drum").click(function(){
     makeSound(button);
     buttonAnimation(button);
 });
-$(document).keypress(function(event){
-    makeSound(event.key);
-    buttonAnimation(event.key);
+$(document).keypress(function(e){
+    makeSound(e.key);
+    buttonAnimation(e.key);
 });
 function makeSound(key){
     switch(key){
@@ -26,12 +26,12 @@ function makeSound(key){
             tom4.play();
             break;
         case "j":
-            const snare = new Audio("/sounds/snare.mp3");
-            snare.play();
-            break;
-        case "k":
             const crash = new Audio("/sounds/crash.mp3");
             crash.play();
+            break;
+        case "k":
+            const snare = new Audio("/sounds/snare.mp3");
+            snare.play();
             break;
         case "l":
             const kick = new Audio("/sounds/kick-bass.mp3");
@@ -39,13 +39,12 @@ function makeSound(key){
             break;
         default:
             console.log(button);
-            break;
     }
 }
 function buttonAnimation(currentKey){
-    let keyButton = document.querySelector("." + currentKey);
-    keyButton.classList.add("pressed");
+    const activateButton = document.querySelector("." + currentKey);
+    activateButton.classList.add("pressed");
     setTimeout(function(){
-        keyButton.classList.remove("pressed");
-    }, 100);
+        activateButton.classList.remove("pressed");
+    }, 100)
 }
