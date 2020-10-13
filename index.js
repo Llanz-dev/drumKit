@@ -26,12 +26,12 @@ function makeSound(key){
             tom4.play();
             break;
         case "j":
-            const crash = new Audio("/sounds/crash.mp3");
-            crash.play();
-            break;
-        case "k":
             const snare = new Audio("/sounds/snare.mp3");
             snare.play();
+            break;
+        case "k":
+            const crash = new Audio("/sounds/crash.mp3");
+            crash.play();
             break;
         case "l":
             const kick = new Audio("/sounds/kick-bass.mp3");
